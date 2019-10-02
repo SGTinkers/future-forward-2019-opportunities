@@ -8,17 +8,25 @@ export default {
   title: "Job Card"
 };
 
-export const jobCard = () => <JobCard />;
+export const jobCard = () => (
+  <JobCard
+    company="Essence"
+    role="Media Activation Executive"
+    type="Full Time"
+    hiringPeriod="Q4 2018"
+    minQualification="Degree"
+  />
+);
 
 export const jobCardsInList = () => (
   <Grid container spacing={2}>
     <Grid item xs={12} md={12}>
       <List>
         <ListItem>
-          <JobCard />
+          {jobCard()}
         </ListItem>
         <ListItem>
-          <JobCard />
+          {jobCard()}
         </ListItem>
       </List>
     </Grid>

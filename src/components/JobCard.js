@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Card } from "@material-ui/core";
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
@@ -12,21 +13,22 @@ const useStyles = makeStyles({
   }
 });
 
-export default () => {
+const JobCard = props => {
+  const { role, company, type, hiringPeriod, minQualification } = props;
   const classes = useStyles();
 
   return (
     <Card className={classes.card}>
       <CardContent>
         <Typography variant="h5" color="textPrimary">
-          Media Activation Executive
+          {role}
         </Typography>
         <Typography paragraph={true} variant="h6" color="textSecondary">
-          Essence
+          {company}
         </Typography>
-        <Typography color="textSecondary">Full Time, Hiring Q4 2018</Typography>
+        <Typography color="textSecondary">{type}, Hiring {hiringPeriod}</Typography>
         <Typography variant="body2" component="p">
-          Minimum Qualifications: Degree
+          Minimum Qualifications: {minQualification}
         </Typography>
       </CardContent>
       <CardActions>
@@ -36,4 +38,14 @@ export default () => {
       </CardActions>
     </Card>
   );
+};
+
+export default JobCard;
+
+JobCard.propTypes = {
+  role: PropTypes.string.isRequired,
+  company: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  hiringPeriod: PropTypes.string.isRequired,
+  minQualification: PropTypes.string.isRequired
 };
