@@ -1,6 +1,8 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import { BrowserRouter } from "react-router-dom";
+import Home from "./scenes/Home";
 
 function App() {
   return (
@@ -19,6 +21,9 @@ function App() {
           Learn React
         </a>
       </header>
+      <BrowserRouter>
+        <Home/>
+      </BrowserRouter>
     </div>
   );
 }
