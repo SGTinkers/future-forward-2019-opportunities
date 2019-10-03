@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
-import Home from "./scenes/Home";
+import JobListing from "./scenes/JobListing";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import { FFAppBar } from "./components/FFAppBar";
@@ -39,7 +39,7 @@ function App() {
       </Grid>
       <Grid item xs={12}>
         <BrowserRouter>
-          <Home/>
+          <JobListing />
         </BrowserRouter>
       </Grid>
     </Grid>
