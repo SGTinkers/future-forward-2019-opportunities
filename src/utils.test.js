@@ -5,6 +5,8 @@ function parseJobResponse(jobResponse) {
         return parseFullTimeJobResponse(jobResponse);
       } else if (jobType === 'Part time job') {
         return parsePartTimeJobResponse(jobResponse);
+      } else if (jobType === 'Internship') {
+        return parseInternshipJobResponse(jobResponse);
       }
 
       return {
@@ -31,6 +33,17 @@ function parsePartTimeJobResponse(jobResponse) {
     hiringPeriod: jobResponse['When are you looking to start hiring part timers?'],
     jobDuration: jobResponse['Part time engagement estimated duration'],
     minQualification: jobResponse['Minimum Qualifications 2'],
+  }
+}
+
+function parseInternshipJobResponse(jobResponse) {
+  return {
+    role: jobResponse['Potential internship role you will be offering:'],
+    company: jobResponse['Organisation Name'],
+    type: 'Internship',
+    hiringPeriod: jobResponse['When are you looking to start hiring interns?'],
+    jobDuration: jobResponse['Internship estimated duration'],
+    minQualification: jobResponse['Minimum Qualifications 3'],
   }
 }
 
@@ -62,6 +75,22 @@ describe("job response parsing", () => {
       type: 'Part time',
       hiringPeriod: 'Q2 2019',
       jobDuration: '1 Month',
+      minQualification: 'Degree',
+    });
+  });
+
+  it("parses internship correctly", () => {
+    const jobResponse = createInternshipJobResponse();
+
+    const jobs = parseJobResponse(jobResponse);
+
+    expect(jobs.length).toBe(1);
+    expect(jobs[0]).toEqual({
+      role: 'Customer Service & Operations Intern (Vendor Management), Customer Success & Operations Intern, Data Analytics Internship, Engineering Internship, Founder\'s Office Internship, Legal Intern, Marketing Intern (Content Writing), Marketing Intern (Copy Writing), Marketing Operations Intern, Partnerships (Business Development) Intern, Product Management Internship, Project Coordination Intern, Regional Employer Branding Intern, Regional Employer Branding Intern (Creative), egional Employer Branding Intern (Videography), Strategic Business Development Internship, Talent Acquisition Intern, Total Rewards Intern',
+      company: 'Circles.Life',
+      type: 'Internship',
+      hiringPeriod: 'Q4 2018',
+      jobDuration: '3-6 Months',
       minQualification: 'Degree',
     });
   });
