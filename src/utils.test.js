@@ -29,6 +29,7 @@ function parsePartTimeJobResponse(jobResponse) {
     company: jobResponse['Organisation Name'],
     type: 'Part time',
     hiringPeriod: jobResponse['When are you looking to start hiring part timers?'],
+    jobDuration: jobResponse['Part time engagement estimated duration'],
     minQualification: jobResponse['Minimum Qualifications 2'],
   }
 }
@@ -60,6 +61,7 @@ describe("job response parsing", () => {
       company: 'Circles.Life',
       type: 'Part time',
       hiringPeriod: 'Q2 2019',
+      jobDuration: '1 Month',
       minQualification: 'Degree',
     });
   });
