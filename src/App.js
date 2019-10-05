@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import JobListing from "./scenes/JobListing";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import { FFAppBar } from "./components/FFAppBar";
-import Papa from 'papaparse';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -12,23 +11,11 @@ const useStyles = makeStyles(theme => ({
   },
   menuButton: {
     marginRight: theme.spacing(2)
-  },
+  }
 }));
 
 function App() {
   const classes = useStyles();
-
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch("/opportunities.csv");
-      const csvData = await response.text();
-
-      const data = Papa.parse(csvData, { header: true });
-      console.log(data);
-    }
-
-    fetchData();
-  });
 
   return (
     <Grid container justify="center">
