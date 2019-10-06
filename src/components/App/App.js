@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import JobListingScene from "./scenes/JobListingScene";
-import JobDetailScene from "./scenes/JobDetailScene";
+import JobListingScene from "../../scenes/JobListingScene";
+import JobDetailScene from "../../scenes/JobDetailScene";
 import Grid from "@material-ui/core/Grid";
 import {
   makeStyles,
   createMuiTheme,
   MuiThemeProvider
 } from "@material-ui/core/styles";
-import { FFAppBar } from "./components/FFAppBar";
+import { FFAppBar } from "../FFAppBar";
 
 const useStyles = makeStyles(theme => ({
   root: {
