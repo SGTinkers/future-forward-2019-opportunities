@@ -31,8 +31,6 @@ export default () => {
 
       const parsedData = parseJobResponses(result.data);
       setJobs(parsedData);
-      console.log(result.data);
-      console.log(parsedData);
     }
 
     fetchJobs();
