@@ -3,11 +3,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import JobListingScene from "../../scenes/JobListingScene";
 import JobDetailScene from "../../scenes/JobDetailScene";
 import Grid from "@material-ui/core/Grid";
-import {
-  createMuiTheme,
-  makeStyles,
-  MuiThemeProvider
-} from "@material-ui/core/styles";
+import { createMuiTheme, makeStyles, MuiThemeProvider } from "@material-ui/core/styles";
 import { FFAppBar } from "../FFAppBar";
 import { Typography } from "@material-ui/core";
 
