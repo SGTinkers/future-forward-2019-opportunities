@@ -29,9 +29,9 @@ const theme = createMuiTheme({
   }
 });
 
-export const CurrentSearchString = React.createContext(null);
+export const SearchStringContext = React.createContext(null);
 
-function reducer(initialState, action) {
+const reducer = (initialState, action) => {
   switch (action.type) {
     case "UPDATE": {
       return action.payload;
@@ -39,7 +39,7 @@ function reducer(initialState, action) {
     default:
       return initialState;
   }
-}
+};
 
 function App() {
   const classes = useStyles();
@@ -47,7 +47,7 @@ function App() {
   const searchStringContext = useReducer(reducer, "");
 
   return (
-    <CurrentSearchString.Provider value={searchStringContext}>
+    <SearchStringContext.Provider value={searchStringContext}>
       <div style={{ background: "#fdfbf1", minHeight: "100vh" }}>
         <BrowserRouter>
           <MuiThemeProvider theme={theme}>
@@ -80,7 +80,7 @@ function App() {
           </Typography>
         </div>
       </div>
-    </CurrentSearchString.Provider>
+    </SearchStringContext.Provider>
   );
 }
 

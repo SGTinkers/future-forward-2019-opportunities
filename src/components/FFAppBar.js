@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
 import { fade } from "@material-ui/core/styles";
-import { CurrentSearchString } from "./App/App";
+import { SearchStringContext } from "./App/App";
 
 const useStyles = makeStyles(theme => ({
   menuButton: {
@@ -54,7 +54,7 @@ const useStyles = makeStyles(theme => ({
 export function FFAppBar() {
   const classes = useStyles();
 
-  let [searchString, dispatch] = useContext(CurrentSearchString);
+  let [searchString, dispatch] = useContext(SearchStringContext);
 
   return (
     <AppBar position="static">
@@ -74,6 +74,7 @@ export function FFAppBar() {
             <SearchIcon />
           </div>
           <InputBase
+            value={searchString}
             onChange={event =>
               dispatch({ type: "UPDATE", payload: event.target.value })
             }

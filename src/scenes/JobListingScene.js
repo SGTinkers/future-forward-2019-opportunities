@@ -6,7 +6,7 @@ import JobCard from "../components/JobCard/JobCard";
 import Grid from "@material-ui/core/Grid";
 import { fetchJobs } from "../utils/utils";
 import { Typography } from "@material-ui/core";
-import { CurrentSearchString } from "../components/App/App";
+import { SearchStringContext } from "../components/App/App";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -35,7 +35,7 @@ export default () => {
       <Grid item xs={12}>
         <Grid container justify="center">
           <Grid item>
-            <CurrentSearchString.Consumer>
+            <SearchStringContext.Consumer>
               {context => (
                 <Typography
                   className={classes.title}
@@ -46,7 +46,7 @@ export default () => {
                   Job Opportunities {context[0]}
                 </Typography>
               )}
-            </CurrentSearchString.Consumer>
+            </SearchStringContext.Consumer>
           </Grid>
         </Grid>
       </Grid>
