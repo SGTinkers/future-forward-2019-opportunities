@@ -15,6 +15,9 @@ Get the data in Google Sheet and turn it into something more presentable.
 3b. ~~Wireframe UI, 10 mins timebox~~
 4a. Create our simple UI (in storybook)
 4b. Integrate the UI together with React Router
-5. Read from CSV/JSON
-6. Integrate the in memory data with UI
+5. ~~Read from CSV/JSON~~
+6. ~~Integrate the in memory data with UI~~
 7. Polish
+7a. Add search/filter
+7b. Add logo
+7c. Add color scheme
