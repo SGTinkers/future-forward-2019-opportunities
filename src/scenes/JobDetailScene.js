@@ -1,3 +1,3 @@
 import React from "react";
 
-export default () => <div>Job Detail</div>
+export default ({ match }) => <div>Job Detail for {match.params.id}</div>
