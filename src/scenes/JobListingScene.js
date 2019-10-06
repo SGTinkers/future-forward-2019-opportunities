@@ -33,7 +33,7 @@ export default () => {
     <Grid container justify="center" className={classes.root}>
       <Grid item>
         <Typography className={classes.title} variant="h5" paragraph noWrap>
-          Opportunities
+          Job Opportunities
         </Typography>
       </Grid>
       <Grid item xs={12} sm={12} md={8} lg={8} xl={4}>
