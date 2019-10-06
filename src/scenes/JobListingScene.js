@@ -9,11 +9,11 @@ import { Typography } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    padding: theme.spacing(2, 1),
+    padding: theme.spacing(2, 1)
   },
   title: {
-    flexGrow: 1,
-  },
+    flexGrow: 1
+  }
 }));
 
 export default () => {
@@ -31,10 +31,14 @@ export default () => {
 
   return (
     <Grid container justify="center" className={classes.root}>
-      <Grid item>
-        <Typography className={classes.title} variant="h5" paragraph noWrap>
-          Job Opportunities
-        </Typography>
+      <Grid item xs={12}>
+        <Grid container justify="center">
+          <Grid item>
+            <Typography className={classes.title} variant="h5" paragraph noWrap>
+              Job Opportunities
+            </Typography>
+          </Grid>
+        </Grid>
       </Grid>
       <Grid item xs={12} sm={12} md={8} lg={8} xl={4}>
         <List>
