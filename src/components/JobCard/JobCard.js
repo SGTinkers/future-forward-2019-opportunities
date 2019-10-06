@@ -21,8 +21,6 @@ const JobCard = React.memo(props => {
     : (props, ref) => <Link innerRef={ref} {...props} />;
   const classes = useStyles();
 
-  console.log("This JobCard just rendered.");
-
   return (
     <Card className={classes.card}>
       <CardContent>
