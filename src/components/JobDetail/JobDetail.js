@@ -6,8 +6,8 @@ import Paper from "@material-ui/core/Paper";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    padding: theme.spacing(2, 2),
-  },
+    padding: theme.spacing(2, 2)
+  }
 }));
 
 const JobDetail = props => {

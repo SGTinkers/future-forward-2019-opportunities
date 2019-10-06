@@ -8,13 +8,13 @@ describe("job response parsing", () => {
 
     expect(jobs.length).toBe(1);
     expect(jobs[0]).toEqual({
-      id: '1-ft-Developer',
-      role: 'Developer',
-      company: 'Circles.Life',
-      type: 'Full time',
-      hiringPeriod: 'Q2 2019',
-      minQualification: 'Degree',
-      jobDescription: 'Lorem ipsum dolor',
+      id: "1-ft-Developer",
+      role: "Developer",
+      company: "Circles.Life",
+      type: "Full time",
+      hiringPeriod: "Q2 2019",
+      minQualification: "Degree",
+      jobDescription: "Lorem ipsum dolor"
     });
   });
 
@@ -25,14 +25,14 @@ describe("job response parsing", () => {
 
     expect(jobs.length).toBe(1);
     expect(jobs[0]).toEqual({
-      id: '1-pt-Developer',
-      role: 'Developer',
-      company: 'Circles.Life',
-      type: 'Part time',
-      hiringPeriod: 'Q2 2019',
-      jobDuration: '1 Month',
-      minQualification: 'Degree',
-      jobDescription: 'Lorem ipsum dolor',
+      id: "1-pt-Developer",
+      role: "Developer",
+      company: "Circles.Life",
+      type: "Part time",
+      hiringPeriod: "Q2 2019",
+      jobDuration: "1 Month",
+      minQualification: "Degree",
+      jobDescription: "Lorem ipsum dolor"
     });
   });
 
@@ -43,14 +43,14 @@ describe("job response parsing", () => {
 
     expect(jobs.length).toBe(18);
     expect(jobs[0]).toEqual({
-      id: '1-i-Customer-Service-and-Operations-Intern-(Vendor-Management)',
-      role: 'Customer Service & Operations Intern (Vendor Management)',
-      company: 'Circles.Life',
-      type: 'Internship',
-      hiringPeriod: 'Q4 2018',
-      jobDuration: '3-6 Months',
-      minQualification: 'Degree',
-      jobDescription: 'Lorem ipsum dolor',
+      id: "1-i-Customer-Service-and-Operations-Intern-(Vendor-Management)",
+      role: "Customer Service & Operations Intern (Vendor Management)",
+      company: "Circles.Life",
+      type: "Internship",
+      hiringPeriod: "Q4 2018",
+      jobDuration: "3-6 Months",
+      minQualification: "Degree",
+      jobDescription: "Lorem ipsum dolor"
     });
   });
 });
@@ -74,7 +74,7 @@ function createFullTimeJobResponse() {
     "Internship estimated duration": "",
     "Potential internship role you will be offering:": "",
     "Minimum Qualifications 3": "",
-    "Job Description 3": "",
+    "Job Description 3": ""
   };
 }
 
@@ -97,7 +97,7 @@ function createPartTimeJobResponse() {
     "Internship estimated duration": "",
     "Potential internship role you will be offering:": "",
     "Minimum Qualifications 3": "",
-    "Job Description 3": "",
+    "Job Description 3": ""
   };
 }
 
@@ -119,8 +119,8 @@ function createInternshipJobResponse() {
     "When are you looking to start hiring interns?": "Q4 2018",
     "Internship estimated duration": "3-6 Months",
     "Potential internship role you will be offering:":
-        "Customer Service & Operations Intern (Vendor Management), Customer Success & Operations Intern, Data Analytics Internship, Engineering Internship, Founder's Office Internship, Legal Intern, Marketing Intern (Content Writing), Marketing Intern (Copy Writing), Marketing Operations Intern, Partnerships (Business Development) Intern, Product Management Internship, Project Coordination Intern, Regional Employer Branding Intern, Regional Employer Branding Intern (Creative), egional Employer Branding Intern (Videography), Strategic Business Development Internship, Talent Acquisition Intern, Total Rewards Intern",
+      "Customer Service & Operations Intern (Vendor Management), Customer Success & Operations Intern, Data Analytics Internship, Engineering Internship, Founder's Office Internship, Legal Intern, Marketing Intern (Content Writing), Marketing Intern (Copy Writing), Marketing Operations Intern, Partnerships (Business Development) Intern, Product Management Internship, Project Coordination Intern, Regional Employer Branding Intern, Regional Employer Branding Intern (Creative), egional Employer Branding Intern (Videography), Strategic Business Development Internship, Talent Acquisition Intern, Total Rewards Intern",
     "Minimum Qualifications 3": "Degree",
-    "Job Description 3": "Lorem ipsum dolor",
+    "Job Description 3": "Lorem ipsum dolor"
   };
 }
