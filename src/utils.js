@@ -21,7 +21,7 @@ export function parseJobResponse(jobResponse) {
 
 function parseFullTimeJobResponse(jobResponse) {
     return {
-        id: jobResponse['ID'],
+        id: `${jobResponse['ID']}-ft`,
         role: jobResponse['Potential full time role you will be offering:'],
         company: jobResponse['Organisation Name'],
         type: 'Full time',
@@ -33,7 +33,7 @@ function parseFullTimeJobResponse(jobResponse) {
 
 function parsePartTimeJobResponse(jobResponse) {
     return {
-        id: jobResponse['ID'],
+        id: `${jobResponse['ID']}-pt`,
         role: jobResponse['Potential part time role you will be offering:'],
         company: jobResponse['Organisation Name'],
         type: 'Part time',
@@ -46,7 +46,7 @@ function parsePartTimeJobResponse(jobResponse) {
 
 function parseInternshipJobResponse(jobResponse) {
     return {
-        id: jobResponse['ID'],
+        id: `${jobResponse['ID']}-i`,
         role: jobResponse['Potential internship role you will be offering:'],
         company: jobResponse['Organisation Name'],
         type: 'Internship',
