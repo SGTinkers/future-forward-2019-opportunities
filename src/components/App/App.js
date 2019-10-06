@@ -14,6 +14,12 @@ import { Typography } from "@material-ui/core";
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
+  },
+  footer: {
+    textAlign: 'center',
+    color: '#deafad',
+    fontStyle: 'italic',
+    padding: theme.spacing(2, 2),
   }
 }));
 
@@ -47,7 +53,7 @@ function App() {
           </Grid>
         </MuiThemeProvider>
       </BrowserRouter>
-      <div style={{ textAlign: 'center', color: '#deafad', fontStyle: 'italic' }}>
+      <div className={classes.footer}>
         <Typography variant="subtitle2">&copy; 2019 Handcrafted by <a href="https://t.me/MSOCIETY" style={{ color: '#deafad' }}>MSOCIETY</a> in collaboration with <a href="http://www.thecodetteproject.com/" style={{ color: '#deafad' }}>The Codette Project.</a></Typography>
       </div>
     </div>
