@@ -1,3 +1,7 @@
+export function parseJobResponses(jobResponses) {
+    return jobResponses.map(jobResponse => parseJobResponse(jobResponse));
+}
+
 export function parseJobResponse(jobResponse) {
     return jobResponse['Future Opportunities Available'].split("\n")
         .map(jobType => {
@@ -17,6 +21,7 @@ export function parseJobResponse(jobResponse) {
 
 function parseFullTimeJobResponse(jobResponse) {
     return {
+        id: jobResponse['ID'],
         role: jobResponse['Potential full time role you will be offering:'],
         company: jobResponse['Organisation Name'],
         type: 'Full time',
@@ -28,6 +33,7 @@ function parseFullTimeJobResponse(jobResponse) {
 
 function parsePartTimeJobResponse(jobResponse) {
     return {
+        id: jobResponse['ID'],
         role: jobResponse['Potential part time role you will be offering:'],
         company: jobResponse['Organisation Name'],
         type: 'Part time',
@@ -40,6 +46,7 @@ function parsePartTimeJobResponse(jobResponse) {
 
 function parseInternshipJobResponse(jobResponse) {
     return {
+        id: jobResponse['ID'],
         role: jobResponse['Potential internship role you will be offering:'],
         company: jobResponse['Organisation Name'],
         type: 'Internship',

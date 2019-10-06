@@ -8,6 +8,7 @@ describe("job response parsing", () => {
 
     expect(jobs.length).toBe(1);
     expect(jobs[0]).toEqual({
+      id: '1',
       role: 'Developer',
       company: 'Circles.Life',
       type: 'Full time',
@@ -24,6 +25,7 @@ describe("job response parsing", () => {
 
     expect(jobs.length).toBe(1);
     expect(jobs[0]).toEqual({
+      id: '1',
       role: 'Developer',
       company: 'Circles.Life',
       type: 'Part time',
@@ -41,6 +43,7 @@ describe("job response parsing", () => {
 
     expect(jobs.length).toBe(1);
     expect(jobs[0]).toEqual({
+      id: '1',
       role: 'Customer Service & Operations Intern (Vendor Management), Customer Success & Operations Intern, Data Analytics Internship, Engineering Internship, Founder\'s Office Internship, Legal Intern, Marketing Intern (Content Writing), Marketing Intern (Copy Writing), Marketing Operations Intern, Partnerships (Business Development) Intern, Product Management Internship, Project Coordination Intern, Regional Employer Branding Intern, Regional Employer Branding Intern (Creative), egional Employer Branding Intern (Videography), Strategic Business Development Internship, Talent Acquisition Intern, Total Rewards Intern',
       company: 'Circles.Life',
       type: 'Internship',
