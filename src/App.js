@@ -1,6 +1,7 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import JobListing from "./scenes/JobListing";
+import JobDetailScene from "./scenes/JobDetailScene";
 import Grid from "@material-ui/core/Grid";
 import {
   makeStyles,
@@ -43,7 +44,8 @@ function App() {
         </Grid>
         <Grid item xs={12}>
           <BrowserRouter>
-            <JobListing />
+            <Route path="/:id" component={JobDetailScene} />
+            <Route exact path="/" component={JobListing} />
           </BrowserRouter>
         </Grid>
       </Grid>
