@@ -22,6 +22,7 @@ function parseFullTimeJobResponse(jobResponse) {
     type: 'Full time',
     hiringPeriod: jobResponse['When are you looking to start hiring full timers?'],
     minQualification: jobResponse['Minimum Qualifications'],
+    jobDescription: jobResponse['Job Description'],
   }
 }
 
@@ -33,6 +34,7 @@ function parsePartTimeJobResponse(jobResponse) {
     hiringPeriod: jobResponse['When are you looking to start hiring part timers?'],
     jobDuration: jobResponse['Part time engagement estimated duration'],
     minQualification: jobResponse['Minimum Qualifications 2'],
+    jobDescription: jobResponse['Job Description 2'],
   }
 }
 
@@ -44,6 +46,7 @@ function parseInternshipJobResponse(jobResponse) {
     hiringPeriod: jobResponse['When are you looking to start hiring interns?'],
     jobDuration: jobResponse['Internship estimated duration'],
     minQualification: jobResponse['Minimum Qualifications 3'],
+    jobDescription: jobResponse['Job Description 3'],
   }
 }
 
@@ -60,6 +63,7 @@ describe("job response parsing", () => {
       type: 'Full time',
       hiringPeriod: 'Q2 2019',
       minQualification: 'Degree',
+      jobDescription: 'Lorem ipsum dolor',
     });
   });
 
@@ -76,6 +80,7 @@ describe("job response parsing", () => {
       hiringPeriod: 'Q2 2019',
       jobDuration: '1 Month',
       minQualification: 'Degree',
+      jobDescription: 'Lorem ipsum dolor',
     });
   });
 
@@ -92,6 +97,7 @@ describe("job response parsing", () => {
       hiringPeriod: 'Q4 2018',
       jobDuration: '3-6 Months',
       minQualification: 'Degree',
+      jobDescription: 'Lorem ipsum dolor',
     });
   });
 });
@@ -105,8 +111,7 @@ function createFullTimeJobResponse() {
     "When are you looking to start hiring full timers?": "Q2 2019",
     "Potential full time role you will be offering:": "Developer",
     "Minimum Qualifications": "Degree",
-    "Job Description":
-        "https://pages.circles.life/job-board/?gh_jid=4271631002",
+    "Job Description": "Lorem ipsum dolor",
     "When are you looking to start hiring part timers?": "",
     "Part time engagement estimated duration": "",
     "Potential part time role you will be offering:": "",
@@ -116,7 +121,7 @@ function createFullTimeJobResponse() {
     "Internship estimated duration": "",
     "Potential internship role you will be offering:": "",
     "Minimum Qualifications 3": "",
-    "Job Description 3": ""
+    "Job Description 3": "",
   };
 }
 
@@ -134,12 +139,12 @@ function createPartTimeJobResponse() {
     "Part time engagement estimated duration": "1 Month",
     "Potential part time role you will be offering:": "Developer",
     "Minimum Qualifications 2": "Degree",
-    "Job Description 2": "https://pages.circles.life/job-board/",
+    "Job Description 2": "Lorem ipsum dolor",
     "When are you looking to start hiring interns?": "",
     "Internship estimated duration": "",
     "Potential internship role you will be offering:": "",
     "Minimum Qualifications 3": "",
-    "Job Description 3": ""
+    "Job Description 3": "",
   };
 }
 
@@ -163,7 +168,6 @@ function createInternshipJobResponse() {
     "Potential internship role you will be offering:":
         "Customer Service & Operations Intern (Vendor Management), Customer Success & Operations Intern, Data Analytics Internship, Engineering Internship, Founder's Office Internship, Legal Intern, Marketing Intern (Content Writing), Marketing Intern (Copy Writing), Marketing Operations Intern, Partnerships (Business Development) Intern, Product Management Internship, Project Coordination Intern, Regional Employer Branding Intern, Regional Employer Branding Intern (Creative), egional Employer Branding Intern (Videography), Strategic Business Development Internship, Talent Acquisition Intern, Total Rewards Intern",
     "Minimum Qualifications 3": "Degree",
-    "Job Description 3":
-        "https://pages.circles.life/job-board/\n\n\n- For intern positions, select the interns tab :)"
+    "Job Description 3": "Lorem ipsum dolor",
   };
 }
