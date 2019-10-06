@@ -54,7 +54,7 @@ const useStyles = makeStyles(theme => ({
 export function FFAppBar() {
   const classes = useStyles();
 
-  let [dispatch] = useContext(CurrentSearchString);
+  let [searchString, dispatch] = useContext(CurrentSearchString);
 
   return (
     <AppBar position="static">
