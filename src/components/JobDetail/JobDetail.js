@@ -3,6 +3,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
+import ReactMarkdown from "react-markdown";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -38,11 +39,9 @@ const JobDetail = props => {
       <Typography variant="subtitle2" color="textSecondary">
         Description
       </Typography>
-      {description.split("\n").map((item, index) => (
-        <Typography key={index} variant="body1" paragraph={true} component="p">
-          {item}
-        </Typography>
-      ))}
+      <Typography variant="body1" paragraph={true} component="div">
+        <ReactMarkdown source={description} />
+      </Typography>
     </Paper>
   );
 };
