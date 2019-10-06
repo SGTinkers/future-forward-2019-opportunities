@@ -13,8 +13,8 @@ Get the data in Google Sheet and turn it into something more presentable.
 2. ~~Setup netlify auto deploy~~
 3a. ~~Import material ui or whatever~~
 3b. ~~Wireframe UI, 10 mins timebox~~
-4a. Create our simple UI (in storybook)
-4b. Integrate the UI together with React Router
+4a. ~~Create our simple UI (in storybook)~~
+4b. ~~Integrate the UI together with React Router~~
 5. ~~Read from CSV/JSON~~
 6. ~~Integrate the in memory data with UI~~
 7. Polish
