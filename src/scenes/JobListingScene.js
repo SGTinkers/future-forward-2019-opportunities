@@ -4,8 +4,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import JobCard from "../components/JobCard";
 import Grid from "@material-ui/core/Grid";
-import Papa from "papaparse";
-import { parseJobResponses } from "../utils";
+import { fetchJobs } from "../utils";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -19,21 +18,11 @@ export default () => {
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
-    async function fetchJobs() {
-      const response = await fetch("/opportunities.csv");
-      const csvData = await response.text();
-
-      const result = Papa.parse(csvData, {header: true});
-      if (result.errors.length !== 0) {
-        // TODO: Deal with the error
-        return;
-      }
-
-      const parsedData = parseJobResponses(result.data);
-      setJobs(parsedData);
-    }
-
-    fetchJobs();
+    const fn = async () => {
+      const jobs = await fetchJobs();
+      setJobs(jobs);
+    };
+    fn();
   }, []);
 
   return (

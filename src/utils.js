@@ -1,4 +1,18 @@
 import slugify from "slugify";
+import Papa from "papaparse";
+
+export async function fetchJobs() {
+    const response = await fetch("/opportunities.csv");
+    const csvData = await response.text();
+
+    const result = Papa.parse(csvData, {header: true});
+    if (result.errors.length !== 0) {
+        // TODO: Deal with the error
+        return;
+    }
+
+    return parseJobResponses(result.data);
+}
 
 export function parseJobResponses(jobResponses) {
     return jobResponses.flatMap(jobResponse => parseJobResponse(jobResponse));
