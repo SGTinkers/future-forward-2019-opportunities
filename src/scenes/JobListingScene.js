@@ -32,7 +32,15 @@ export default () => {
 
   const [searchString] = useContext(SearchStringContext);
 
-  const filteredJobs = jobs.filter(job => job.company.toLowerCase().includes(searchString.toLowerCase()));
+  const filteredJobs = jobs.filter(job => {
+    let result = false;
+
+    if (job.company.toLowerCase().includes(searchString.toLowerCase())) result = true;
+    if (job.role.toLowerCase().includes(searchString.toLowerCase())) result = true;
+    if (job.type.toLowerCase().includes(searchString.toLowerCase())) result = true;
+
+    return result;
+  });
 
   return (
     <Grid container justify="center" className={classes.root}>
