@@ -4,7 +4,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import JobCard from "../components/JobCard";
 import Grid from "@material-ui/core/Grid";
-import { fetchJobs } from "../utils";
+import { fetchJobs } from "../utils/utils";
 
 const useStyles = makeStyles(theme => ({
   root: {
