@@ -15,6 +15,11 @@ export const jobCard = () => (
     type="Full Time"
     hiringPeriod="Q4 2018"
     minQualification="Degree"
+    linkComponentFn={(props, ref) => (
+      <div innerRef={ref} {...props}>
+        {props.children}
+      </div>
+    )}
     link="/"
   />
 );
@@ -23,12 +28,8 @@ export const jobCardsInList = () => (
   <Grid container spacing={2}>
     <Grid item xs={12} md={12}>
       <List>
-        <ListItem>
-          {jobCard()}
-        </ListItem>
-        <ListItem>
-          {jobCard()}
-        </ListItem>
+        <ListItem>{jobCard()}</ListItem>
+        <ListItem>{jobCard()}</ListItem>
       </List>
     </Grid>
   </Grid>

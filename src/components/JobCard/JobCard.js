@@ -16,6 +16,9 @@ const useStyles = makeStyles({
 
 const JobCard = props => {
   const { role, company, type, hiringPeriod, minQualification, link } = props;
+  let linkComponentFn = props.linkComponentFn
+    ? props.linkComponentFn
+    : (props, ref) => <Link innerRef={ref} {...props} />;
   const classes = useStyles();
 
   return (
@@ -39,9 +42,7 @@ const JobCard = props => {
           variant="outlined"
           color="secondary"
           to={link}
-          component={React.forwardRef((props, ref) => (
-            <Link innerRef={ref} {...props} />
-          ))}
+          component={React.forwardRef(linkComponentFn)}
         >
           Learn More
         </Button>
@@ -58,5 +59,6 @@ JobCard.propTypes = {
   type: PropTypes.string.isRequired,
   hiringPeriod: PropTypes.string.isRequired,
   minQualification: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired
+  link: PropTypes.string.isRequired,
+  linkComponentFn: PropTypes.any
 };
