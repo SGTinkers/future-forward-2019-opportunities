@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchJob } from "../utils/utils";
-import JobDetail from "../components/JobDetail";
+import JobDetail from "../components/JobDetail/JobDetail";
 import { makeStyles } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 

@@ -15,6 +15,7 @@ export const jobCard = () => (
     type="Full Time"
     hiringPeriod="Q4 2018"
     minQualification="Degree"
+    link="/"
   />
 );
 
