@@ -7,13 +7,13 @@ import Grid from "@material-ui/core/Grid";
 const useStyles = makeStyles(theme => ({
   root: {
     padding: theme.spacing(0, 0),
-    [theme.breakpoints.up('sm')]: {
-      padding: theme.spacing(2, 2),
-    },
+    [theme.breakpoints.up("sm")]: {
+      padding: theme.spacing(2, 2)
+    }
   },
   title: {
-    flexGrow: 1,
-  },
+    flexGrow: 1
+  }
 }));
 
 export default ({ match }) => {
@@ -46,7 +46,7 @@ export default ({ match }) => {
       />
     );
   } else if (isLoading) {
-    jobView = <div>Loading...</div>
+    jobView = <div>Loading...</div>;
   } else {
     jobView = <div>Not found.</div>;
   }

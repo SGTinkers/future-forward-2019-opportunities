@@ -7,8 +7,8 @@ import ReactMarkdown from "react-markdown";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    padding: theme.spacing(2, 2),
-  },
+    padding: theme.spacing(2, 2)
+  }
 }));
 
 const JobDetail = props => {

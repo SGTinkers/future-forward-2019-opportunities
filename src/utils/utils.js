@@ -47,9 +47,7 @@ function parseFullTimeJobResponse(jobResponse) {
   return jobResponse["Potential full time role you will be offering:"]
     .split(",")
     .map(role => ({
-      id: `${slugify(jobResponse["Organisation Name"])}-${
-        jobResponse["ID"]
-      }ft-${slugify(role)}`.toLowerCase(),
+      id: `${jobResponse["ID"]}-ft-${slugify(role)}`,
       role: role,
       company: jobResponse["Organisation Name"],
       type: "Full time",
@@ -64,9 +62,7 @@ function parsePartTimeJobResponse(jobResponse) {
   return jobResponse["Potential part time role you will be offering:"]
     .split(",")
     .map(role => ({
-      id: `${slugify(jobResponse["Organisation Name"])}-${
-        jobResponse["ID"]
-      }pt-${slugify(role)}`.toLowerCase(),
+      id: `${jobResponse["ID"]}-pt-${slugify(role)}`,
       role: role,
       company: jobResponse["Organisation Name"],
       type: "Part time",
@@ -82,9 +78,7 @@ function parseInternshipJobResponse(jobResponse) {
   return jobResponse["Potential internship role you will be offering:"]
     .split(",")
     .map(role => ({
-      id: `${slugify(jobResponse["Organisation Name"])}-${
-        jobResponse["ID"]
-      }i-${slugify(role)}`.toLowerCase(),
+      id: `${jobResponse["ID"]}-i-${slugify(role)}`,
       role: role,
       company: jobResponse["Organisation Name"],
       type: "Internship",

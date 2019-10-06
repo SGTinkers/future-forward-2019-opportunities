@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -6,6 +6,7 @@ import JobCard from "../components/JobCard/JobCard";
 import Grid from "@material-ui/core/Grid";
 import { fetchJobs } from "../utils/utils";
 import { Typography } from "@material-ui/core";
+import { SearchStringContext } from "../components/App/App";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -29,20 +30,24 @@ export default () => {
     fn();
   }, []);
 
+  const [searchString] = useContext(SearchStringContext);
+
+  const filteredJobs = jobs.filter(job => job.company.toLowerCase().includes(searchString.toLowerCase()));
+
   return (
     <Grid container justify="center" className={classes.root}>
       <Grid item xs={12}>
         <Grid container justify="center">
           <Grid item>
             <Typography className={classes.title} variant="h5" paragraph noWrap>
-              Job Opportunities
+              Job Opportunities ({filteredJobs.length} shown)
             </Typography>
           </Grid>
         </Grid>
       </Grid>
       <Grid item xs={12} sm={12} md={8} lg={8} xl={4}>
         <List>
-          {jobs.map(job => (
+          {filteredJobs.map(job => (
             <ListItem key={job.id}>
               <JobCard
                 company={job.company}

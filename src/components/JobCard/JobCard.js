@@ -14,7 +14,7 @@ const useStyles = makeStyles({
   }
 });
 
-const JobCard = props => {
+const JobCard = React.memo(props => {
   const { role, company, type, hiringPeriod, minQualification, link } = props;
   let linkComponentFn = props.linkComponentFn
     ? props.linkComponentFn
@@ -49,7 +49,7 @@ const JobCard = props => {
       </CardActions>
     </Card>
   );
-};
+});
 
 export default JobCard;
 
