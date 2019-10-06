@@ -32,7 +32,7 @@ const JobCard = props => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button variant="outlined" color="primary">
+        <Button variant="outlined" color="secondary">
           Learn More
         </Button>
       </CardActions>

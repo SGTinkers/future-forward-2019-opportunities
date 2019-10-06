@@ -2,7 +2,11 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import JobListing from "./scenes/JobListing";
 import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
+import {
+  makeStyles,
+  createMuiTheme,
+  MuiThemeProvider
+} from "@material-ui/core/styles";
 import { FFAppBar } from "./components/FFAppBar";
 
 const useStyles = makeStyles(theme => ({
@@ -14,22 +18,36 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#deafad',
+      contrastText: '#fdfbf1',
+    },
+    secondary: {
+      main: '#374d5d',
+    },
+  }
+});
+
 function App() {
   const classes = useStyles();
 
   return (
-    <Grid container justify="center">
-      <Grid item xs={12}>
-        <div className={classes.root}>
-          <FFAppBar />
-        </div>
+    <MuiThemeProvider theme={theme}>
+      <Grid container justify="center">
+        <Grid item xs={12}>
+          <div className={classes.root}>
+            <FFAppBar />
+          </div>
+        </Grid>
+        <Grid item xs={12}>
+          <BrowserRouter>
+            <JobListing />
+          </BrowserRouter>
+        </Grid>
       </Grid>
-      <Grid item xs={12}>
-        <BrowserRouter>
-          <JobListing />
-        </BrowserRouter>
-      </Grid>
-    </Grid>
+    </MuiThemeProvider>
   );
 }
 

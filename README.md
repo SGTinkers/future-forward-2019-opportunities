@@ -19,5 +19,5 @@ Get the data in Google Sheet and turn it into something more presentable.
 6. ~~Integrate the in memory data with UI~~
 7. Polish
 7a. Add search/filter
-7b. Add logo
-7c. Add color scheme
+7b. ~~Add logo~~
+7c. ~~Add color scheme~~
