@@ -2,7 +2,6 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import logo from "../assets/ff-logo.png";
-import Typography from "@material-ui/core/Typography";
 import React from "react";
 import { makeStyles } from "@material-ui/core";
 import { Link } from "react-router-dom";
@@ -11,9 +10,6 @@ const useStyles = makeStyles(theme => ({
   menuButton: {
     marginRight: theme.spacing(2)
   },
-  title: {
-    flexGrow: 1
-  }
 }));
 
 export function FFAppBar() {
@@ -31,9 +27,6 @@ export function FFAppBar() {
             <img src={logo} alt="Future Forward" style={{ height: 36 }} />
           </IconButton>
         </Link>
-        <Typography className={classes.title} variant="h6" noWrap>
-          Opportunities
-        </Typography>
       </Toolbar>
     </AppBar>
   );

@@ -1,12 +1,10 @@
 import PropTypes from "prop-types";
-import { Card } from "@material-ui/core";
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import CardContent from "@material-ui/core/CardContent";
 
 const useStyles = makeStyles({
-  card: {}
+  root: {}
 });
 
 const JobDetail = props => {
@@ -21,30 +19,28 @@ const JobDetail = props => {
   const classes = useStyles();
 
   return (
-    <Card className={classes.card}>
-      <CardContent>
-        <Typography variant="h5" color="textPrimary">
-          {role}
+    <div className={classes.root}>
+      <Typography variant="h5" color="textPrimary">
+        {role}
+      </Typography>
+      <Typography paragraph={true} variant="h6" color="textSecondary">
+        {company}
+      </Typography>
+      <Typography color="textSecondary">
+        {type}, Hiring {hiringPeriod}
+      </Typography>
+      <Typography paragraph={true} variant="body2" component="p">
+        Minimum Qualifications: {minQualification}
+      </Typography>
+      <Typography variant="subtitle2" color="textSecondary">
+        Description
+      </Typography>
+      {description.split("\n").map((item, index) => (
+        <Typography key={index} variant="body1" paragraph={true} component="p">
+          {item}
         </Typography>
-        <Typography paragraph={true} variant="h6" color="textSecondary">
-          {company}
-        </Typography>
-        <Typography color="textSecondary">
-          {type}, Hiring {hiringPeriod}
-        </Typography>
-        <Typography paragraph={true} variant="body2" component="p">
-          Minimum Qualifications: {minQualification}
-        </Typography>
-        <Typography variant="subtitle2" color="textSecondary">
-          Description
-        </Typography>
-        {description.split("\n").map((item, index) => (
-          <Typography key={index} variant="body1" paragraph={true} component="p">
-            {item}
-          </Typography>
-        ))}
-      </CardContent>
-    </Card>
+      ))}
+    </div>
   );
 };
 
