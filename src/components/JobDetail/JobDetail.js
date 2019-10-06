@@ -2,10 +2,13 @@ import PropTypes from "prop-types";
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import Paper from "@material-ui/core/Paper";
 
-const useStyles = makeStyles({
-  root: {}
-});
+const useStyles = makeStyles(theme => ({
+  root: {
+    padding: theme.spacing(2, 2),
+  },
+}));
 
 const JobDetail = props => {
   const {
@@ -19,7 +22,7 @@ const JobDetail = props => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <Paper className={classes.root}>
       <Typography variant="h5" color="textPrimary">
         {role}
       </Typography>
@@ -40,7 +43,7 @@ const JobDetail = props => {
           {item}
         </Typography>
       ))}
-    </div>
+    </Paper>
   );
 };
 
