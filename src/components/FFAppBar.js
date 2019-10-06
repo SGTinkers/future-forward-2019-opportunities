@@ -5,13 +5,14 @@ import logo from "../assets/ff-logo.png";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
 import { makeStyles } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   menuButton: {
     marginRight: theme.spacing(2)
   },
   title: {
-    flexGrow: 1,
+    flexGrow: 1
   }
 }));
 
@@ -21,9 +22,15 @@ export function FFAppBar() {
   return (
     <AppBar position="static">
       <Toolbar>
-        <IconButton edge="start" className={classes.menuButton} color="inherit">
-          <img src={logo} alt="Future Forward" style={{ height: 36 }} />
-        </IconButton>
+        <Link to={"/"}>
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+          >
+            <img src={logo} alt="Future Forward" style={{ height: 36 }} />
+          </IconButton>
+        </Link>
         <Typography className={classes.title} variant="h6" noWrap>
           Opportunities
         </Typography>
