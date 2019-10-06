@@ -1,5 +1,5 @@
 export function parseJobResponses(jobResponses) {
-    return jobResponses.map(jobResponse => parseJobResponse(jobResponse));
+    return jobResponses.flatMap(jobResponse => parseJobResponse(jobResponse));
 }
 
 export function parseJobResponse(jobResponse) {

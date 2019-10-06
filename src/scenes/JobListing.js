@@ -5,6 +5,7 @@ import ListItem from "@material-ui/core/ListItem";
 import JobCard from "../components/JobCard";
 import Grid from "@material-ui/core/Grid";
 import Papa from "papaparse";
+import { parseJobResponses } from "../utils";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -28,8 +29,10 @@ export default () => {
         return;
       }
 
-      setJobs(result.data);
+      const parsedData = parseJobResponses(result.data);
+      setJobs(parsedData);
       console.log(result.data);
+      console.log(parsedData);
     }
 
     fetchJobs();
@@ -40,13 +43,13 @@ export default () => {
       <Grid item xs={12} sm={12} md={8} lg={8} xl={4}>
         <List>
           {jobs.map(job => (
-            <ListItem key={""}>
+            <ListItem key={job.id}>
               <JobCard
-                company={""}
-                role={""}
-                type="Full Time"
-                hiringPeriod="Q4 2018"
-                minQualification="Degree"
+                company={job.company}
+                role={job.role}
+                type={job.type}
+                hiringPeriod={job.hiringPeriod}
+                minQualification={job.minQualification}
               />
             </ListItem>
           ))}
