@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -30,23 +30,16 @@ export default () => {
     fn();
   }, []);
 
+  const [searchString] = useContext(SearchStringContext);
+
   return (
     <Grid container justify="center" className={classes.root}>
       <Grid item xs={12}>
         <Grid container justify="center">
           <Grid item>
-            <SearchStringContext.Consumer>
-              {context => (
-                <Typography
-                  className={classes.title}
-                  variant="h5"
-                  paragraph
-                  noWrap
-                >
-                  Job Opportunities {context[0]}
-                </Typography>
-              )}
-            </SearchStringContext.Consumer>
+            <Typography className={classes.title} variant="h5" paragraph noWrap>
+              Job Opportunities {searchString}
+            </Typography>
           </Grid>
         </Grid>
       </Grid>
