@@ -1,3 +1,51 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { fetchJob } from "../utils";
+import JobDetail from "../components/JobDetail";
+import { makeStyles } from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
 
-export default ({ match }) => <div>Job Detail for {match.params.id}</div>
+const useStyles = makeStyles(theme => ({
+  root: {
+    padding: theme.spacing(1, 1)
+  }
+}));
+
+export default ({ match }) => {
+  const classes = useStyles();
+
+  const [job, setJob] = useState(undefined);
+
+  useEffect(() => {
+    const fn = async () => {
+      const job = await fetchJob(match.params.id);
+      if (job) {
+        setJob(job);
+      }
+    };
+    fn();
+  }, [match.params.id]);
+
+  let jobView = undefined;
+  if (job) {
+    jobView = (
+      <JobDetail
+        role={job.role}
+        company={job.company}
+        type={job.type}
+        hiringPeriod={job.hiringPeriod}
+        minQualification={job.minQualification}
+        description={job.jobDescription}
+      />
+    );
+  } else {
+    jobView = <div>Not found.</div>;
+  }
+
+  return (
+    <Grid container justify="center" className={classes.root}>
+      <Grid item xs={12} sm={12} md={8} lg={8} xl={4}>
+        {jobView}
+      </Grid>
+    </Grid>
+  );
+};

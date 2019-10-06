@@ -6,15 +6,16 @@ import Typography from "@material-ui/core/Typography";
 import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
 import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   card: {
-    width: '100vw'
+    width: "100vw"
   }
 });
 
 const JobCard = props => {
-  const { role, company, type, hiringPeriod, minQualification } = props;
+  const { role, company, type, hiringPeriod, minQualification, link } = props;
   const classes = useStyles();
 
   return (
@@ -26,13 +27,22 @@ const JobCard = props => {
         <Typography paragraph={true} variant="h6" color="textSecondary">
           {company}
         </Typography>
-        <Typography color="textSecondary">{type}, Hiring {hiringPeriod}</Typography>
+        <Typography color="textSecondary">
+          {type}, Hiring {hiringPeriod}
+        </Typography>
         <Typography variant="body2" component="p">
           Minimum Qualifications: {minQualification}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button variant="outlined" color="secondary">
+        <Button
+          variant="outlined"
+          color="secondary"
+          to={link}
+          component={React.forwardRef((props, ref) => (
+            <Link innerRef={ref} {...props} />
+          ))}
+        >
           Learn More
         </Button>
       </CardActions>
@@ -47,5 +57,6 @@ JobCard.propTypes = {
   company: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   hiringPeriod: PropTypes.string.isRequired,
-  minQualification: PropTypes.string.isRequired
+  minQualification: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired
 };

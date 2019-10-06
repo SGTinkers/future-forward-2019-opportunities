@@ -14,6 +14,11 @@ export async function fetchJobs() {
     return parseJobResponses(result.data);
 }
 
+export async function fetchJob(id) {
+    const jobs = await fetchJobs();
+    return jobs.filter(job => job.id === id)[0];
+}
+
 export function parseJobResponses(jobResponses) {
     return jobResponses.flatMap(jobResponse => parseJobResponse(jobResponse));
 }

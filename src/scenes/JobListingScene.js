@@ -37,6 +37,7 @@ export default () => {
                 type={job.type}
                 hiringPeriod={job.hiringPeriod}
                 minQualification={job.minQualification}
+                link={`/${job.id}`}
               />
             </ListItem>
           ))}
