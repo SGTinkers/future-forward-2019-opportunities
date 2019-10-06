@@ -19,6 +19,7 @@ const useStyles = makeStyles(theme => ({
 export default ({ match }) => {
   const classes = useStyles();
 
+  const [isLoading, setIsLoading] = useState(true);
   const [job, setJob] = useState(undefined);
 
   useEffect(() => {
@@ -27,6 +28,7 @@ export default ({ match }) => {
       if (job) {
         setJob(job);
       }
+      setIsLoading(false);
     };
     fn();
   }, [match.params.id]);
@@ -43,6 +45,8 @@ export default ({ match }) => {
         description={job.jobDescription}
       />
     );
+  } else if (isLoading) {
+    jobView = <div>Loading...</div>
   } else {
     jobView = <div>Not found.</div>;
   }
