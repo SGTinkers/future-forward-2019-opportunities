@@ -8,7 +8,7 @@ describe("job response parsing", () => {
 
     expect(jobs.length).toBe(1);
     expect(jobs[0]).toEqual({
-      id: '1-ft-Developer',
+      id: 'circles.life-1ft-developer',
       role: 'Developer',
       company: 'Circles.Life',
       type: 'Full time',
@@ -25,7 +25,7 @@ describe("job response parsing", () => {
 
     expect(jobs.length).toBe(1);
     expect(jobs[0]).toEqual({
-      id: '1-pt-Developer',
+      id: 'circles.life-1pt-developer',
       role: 'Developer',
       company: 'Circles.Life',
       type: 'Part time',
@@ -43,7 +43,7 @@ describe("job response parsing", () => {
 
     expect(jobs.length).toBe(18);
     expect(jobs[0]).toEqual({
-      id: '1-i-Customer-Service-and-Operations-Intern-(Vendor-Management)',
+      id: 'circles.life-1i-customer-service-and-operations-intern-(vendor-management)',
       role: 'Customer Service & Operations Intern (Vendor Management)',
       company: 'Circles.Life',
       type: 'Internship',
