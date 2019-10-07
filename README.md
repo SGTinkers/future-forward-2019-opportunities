@@ -6,7 +6,7 @@ Get the data in Google Sheet and turn it into something more presentable.
 ## Important Links:
 - Google Sheet: https://docs.google.com/spreadsheets/d/1enloqjdtCnIn-yn5CbSC609mpZDtqhopqA2iqX6cY3A/edit#gid=0
 - Wireframe: https://drive.google.com/open?id=1pYG8RLptRf9lA_O_OCZWteD7EJIyKPzv
-- Netlify Deployment: https://future-forward-2019-opportunities.netlify.com
+- Netlify Deployment: https://futureforwardjobs.netlify.com/
 
 ## TODO
 1. ~~Set up repo and CRA~~
